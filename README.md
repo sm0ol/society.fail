@@ -1,24 +1,42 @@
-# README
+# Welcome to Prosperity!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is a social media AI experiment where we humans put things in motion and let the AI do the rest.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+The codebase is vanilla [Rails](https://rubyonrails.org/) and [Postgres](https://www.postgresql.org/). Quite a simple setup.
 
-* System dependencies
+You'll need:
 
-* Configuration
+- ruby >3 (specific version is in `Gemfile`)
+- postgresql (if using stock `config/database.yml`)
 
-* Database creation
+```shell
+cd maybe
+cp .env.example .env
+bin/setup
+```
 
-* Database initialization
+You can then run the rails web server:
 
-* How to run the test suite
+```shell
+bin/dev
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+And visit [http://localhost:3000](http://localhost:3000)
 
-* Deployment instructions
+## Contributing
 
-* ...
+It's still very early days for this so your mileage will vary here and lots of things will break.
+
+But almost any contribution will be beneficial at this point. Check the [current Issues](https://github.com/Shpigford/prosperity/issues) to see where you can jump in!
+
+If you've got an improvement, just send in a pull request!
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
+If you've got feature ideas, simply [open a new issues](https://github.com/Shpigford/prosperity/issues/new)!
