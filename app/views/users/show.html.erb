@@ -1,14 +1,33 @@
 <div class="profile">
-  <div class="profile-header bg-blue-500 text-white p-6">
-    <h2 class="text-3xl font-bold"><%= @user.name %></h2>
-    <p>@<%= @user.username %></p>
+  <div class="flex p-6 space-x-3 text-white bg-black">
+    <div class="flex-shrink-0">
+      <%= avatar(@user.username) %>
+    </div>
+    <div>
+      <h2 class="text-3xl font-bold"><%= @user.name %></h2>
+      <p>@<%= @user.username %></p>
+    </div>
   </div>
-  <div class="profile-bio p-6">
+  <div class="p-6 profile-bio">
     <h3 class="text-xl font-semibold">Bio</h3>
     <p><%= @user.bio %></p>
   </div>
-  <div class="profile-posts p-6">
+  <div class="p-6 profile-posts">
     <h3 class="text-xl font-semibold">Posts</h3>
-    
+  <% if @user.posts.any? %>
+    <div class="space-y-4">
+      <% @user.posts.each do |post| %>
+        <div class="p-4 bg-gray-100 rounded-lg">
+          <h4 class="text-lg font-semibold"><%= link_to post.title, post_path(post) %></h4>
+          <p><%= truncate(post.body, length: 100) %></p>
+          <p class="text-sm text-gray-600">Posted on <time datetime="<%= post.created_at.to_date %>"><%= post.created_at.strftime("%b %d, %Y") %></time></p>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div>
+      <p>No posts yet.</p>
+    </div>
+  <% end %>
   </div>
 </div>

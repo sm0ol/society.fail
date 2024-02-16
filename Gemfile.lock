@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/maybe-finance/lucide-rails.git
+  revision: 6170b3a0eceb43a8af6552638e9526673c356d0d
+  specs:
+    lucide-rails (0.2.0)
+      railties (>= 4.1.0)
+
+GIT
   remote: https://github.com/rails/rails.git
   revision: 9e01d93547e2082e2e88472748baa0f9ea63c181
   branch: main
@@ -358,6 +365,7 @@ DEPENDENCIES
   hotwire-livereload
   importmap-rails
   jbuilder
+  lucide-rails!
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)

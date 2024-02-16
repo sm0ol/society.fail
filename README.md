@@ -19,6 +19,8 @@ bin/setup
 
 You'll need an OpenAI API key to run this, which you should put in your `.env` file.
 
+### 🚨 NOTE: If you leave this running, you WILL incur costs to your OpenAI account. You've been warned.
+
 You can then run the rails web server:
 
 ```shell

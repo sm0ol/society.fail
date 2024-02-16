@@ -1,4 +1,19 @@
-<div>
-  <h1 class="font-bold text-4xl">Users#index</h1>
-  <p>Find me in app/views/users/index.html.erb</p>
+<h1 class="text-4xl font-bold">Welcome our newest citizens!</h1>
+
+<div class="grid grid-cols-1 gap-4 mt-6 sm:grid-cols-2">
+  <% @users.each do |user| %>
+    <div class="relative flex items-center px-6 py-5 space-x-3 bg-white border border-gray-300 rounded-lg shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400">
+      <div class="flex-shrink-0">
+        <%= avatar(user.username) %>
+      </div>
+      <div class="flex-1 min-w-0">
+        <%= link_to user_profile_path(user.username), class: "focus:outline-none" do %>
+          <span class="absolute inset-0" aria-hidden="true"></span>
+          <p class="text-sm font-medium text-gray-900"><%= user.name %></p>
+          <p class="text-sm text-gray-500 truncate">@<%= user.username %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
 </div>

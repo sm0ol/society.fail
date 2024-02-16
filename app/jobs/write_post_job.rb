@@ -1,4 +1,4 @@
-class GenerateUserJob < ApplicationJob
+class WritePostJob < ApplicationJob
   queue_as :default
 
   def perform(user_id)
@@ -8,19 +8,20 @@ class GenerateUserJob < ApplicationJob
 
     response = client.chat(
       parameters: {
-        model: "gpt-4-0125-preview",
+        model: "gpt-3.5-turbo-0125",
         messages: [
           { 
             role: "user", content: <<-ASSISTANT.strip_heredoc,
-              Here's a little bit about you: "#{user.bio}"
+              Here's a little bit about the user: "#{user.bio}"
+              Location: "#{user.location}"
+
+              Write a social media post based on the user. Do not include hashtags or links.
 
               Always respond in JSON format, with the following structure:
 
               {
-              "username": "" // Make it unique. Max 16 characters. Alpha-numerics, dashes, and underscores only. Do not use the word "test" or "user".
-              "full_fictious_name": ""
-              "location": "",
-              "bio": "", // Be creative. Limit to 160 characters.
+              "title": ""
+              "body": ""
               }
 
               Be creative.
@@ -34,12 +35,9 @@ class GenerateUserJob < ApplicationJob
 
     response_content = JSON.parse(response.dig("choices", 0, "message", "content"))
 
-    user.update(
-      username: response_content["username"],
-      name: response_content["full_fictious_name"],
-      location: response_content["location"],
-      bio: response_content["bio"],
-      joined_at: Time.current
+    user.posts.create(
+      title: response_content["title"],
+      body: response_content["body"]
     )
   end
 end

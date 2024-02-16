@@ -42,6 +42,9 @@ gem "good_job"
 # AI
 gem "ruby-openai"
 
+# Assets
+gem "lucide-rails", github: "maybe-finance/lucide-rails"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]

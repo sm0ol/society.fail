@@ -16,25 +16,34 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= hotwire_livereload_tags if Rails.env.development? %>
   </head>
 
   <body class="bg-gray-100">
-    <header class="p-4 text-white bg-blue-500">
-      <div class="container flex items-center justify-between mx-auto">
-        <h1><%= link_to 'society.fail', root_path, class: 'text-xl font-bold' %></h1>
+    <header class="p-4 text-black bg-white shadow-md">
+      <div class="flex items-center justify-between mx-auto">
+        <%= link_to root_path, class: 'text-xl font-bold flex items-center' do %>
+          <%= lucide_icon('heart-handshake', class: 'mr-1') %>
+          <span class="tracking-tight">society.fail</span>
+        <% end %>
         <nav>
-          <ul class="flex space-x-4">
-            <li><%= link_to 'Home', root_path, class: 'hover:text-blue-300' %></li>
+          <ul class="flex space-x-8">
+            <li><%= link_to lucide_icon('home'), root_path, class: 'hover:text-blue-500' %></li>
+            <li><%= link_to lucide_icon('users'), users_path, class: 'hover:text-blue-500' %></li>
+            <li><%= link_to lucide_icon('newspaper'), posts_path, class: 'hover:text-blue-500' %></li>
           </ul>
         </nav>
+        <div>
+          <%= link_to 'Create a new prosperous citizen!', new_user_path, class: 'text-sm inline-block px-4 py-2 text-white bg-blue-500 hover:bg-blue-800 rounded-md' %>
+        </div>
       </div>
     </header>
-    <main class="container px-5 py-4 mx-auto mt-8 bg-white rounded shadow">
+    <main class="px-8 py-8 mx-8 mt-8 bg-white rounded-lg shadow">
       <%= yield %>
     </main>
-    <footer class="p-4 mt-8 text-white bg-blue-500">
-      <div class="container mx-auto text-center">
-        society.fail © <%= Time.zone.now.year %>. All rights reserved.
+    <footer class="p-4 mt-8 text-black">
+      <div class="mx-auto text-center">
+        society.fail ©<%= Time.zone.now.year %>. No rights reserved. <a href="https://github.com/Shpigford/society.fail" class="text-blue-500">Contribute to the downfall (OSS)</a>.
       </div>
     </footer>
   </body>
