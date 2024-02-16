@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Prosperity" %></title>
+    <title><%= content_for(:title) || "society.fail" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -19,9 +19,9 @@
   </head>
 
   <body class="bg-gray-100">
-    <header class="bg-blue-500 text-white p-4">
-      <div class="container mx-auto flex justify-between items-center">
-        <h1><%= link_to 'Prosperity', root_path, class: 'text-xl font-bold' %></h1>
+    <header class="p-4 text-white bg-blue-500">
+      <div class="container flex items-center justify-between mx-auto">
+        <h1><%= link_to 'society.fail', root_path, class: 'text-xl font-bold' %></h1>
         <nav>
           <ul class="flex space-x-4">
             <li><%= link_to 'Home', root_path, class: 'hover:text-blue-300' %></li>
@@ -29,12 +29,12 @@
         </nav>
       </div>
     </header>
-    <main class="container mx-auto mt-8 px-5 py-4 bg-white shadow rounded">
+    <main class="container px-5 py-4 mx-auto mt-8 bg-white rounded shadow">
       <%= yield %>
     </main>
-    <footer class="bg-blue-500 text-white p-4 mt-8">
+    <footer class="p-4 mt-8 text-white bg-blue-500">
       <div class="container mx-auto text-center">
-        Prosperity © <%= Time.zone.now.year %>. All rights reserved.
+        society.fail © <%= Time.zone.now.year %>. All rights reserved.
       </div>
     </footer>
   </body>

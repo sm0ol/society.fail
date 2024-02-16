@@ -27,13 +27,13 @@ default: &default
 
 development:
   <<: *default
-  database: prosperity_development
+  database: society_fail_development
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: prosperity
+  #username: society_fail
 
   # The password associated with the PostgreSQL role (username).
   #password:
@@ -61,7 +61,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: prosperity_test
+  database: society_fail_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -85,6 +85,6 @@ test:
 #
 production:
   <<: *default
-  database: prosperity_production
-  username: prosperity
-  password: <%= ENV["PROSPERITY_DATABASE_PASSWORD"] %>
+  database: society_fail_production
+  username: society_fail
+  password: <%= ENV["SOCIETY_FAIL_DATABASE_PASSWORD"] %>

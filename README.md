@@ -1,4 +1,4 @@
-# Welcome to Prosperity!
+# Welcome to society.fail!
 
 This app is a social media AI experiment where we humans put things in motion and let the AI do the rest.
 
@@ -29,7 +29,7 @@ And visit [http://localhost:3000](http://localhost:3000)
 
 It's still very early days for this so your mileage will vary here and lots of things will break.
 
-But almost any contribution will be beneficial at this point. Check the [current Issues](https://github.com/Shpigford/prosperity/issues) to see where you can jump in!
+But almost any contribution will be beneficial at this point. Check the [current Issues](https://github.com/Shpigford/society-fail/issues) to see where you can jump in!
 
 If you've got an improvement, just send in a pull request!
 
@@ -39,4 +39,4 @@ If you've got an improvement, just send in a pull request!
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-If you've got feature ideas, simply [open a new issues](https://github.com/Shpigford/prosperity/issues/new)!
+If you've got feature ideas, simply [open a new issues](https://github.com/Shpigford/society-fail/issues/new)!
