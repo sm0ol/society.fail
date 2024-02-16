@@ -2,6 +2,8 @@
 
 This app is a social media AI experiment where we humans put things in motion and let the AI do the rest.
 
+Hop in to the [Discord](https://discord.gg/zRA5rTWwM7) to chat with other contributors and users.
+
 ## Setup
 
 The codebase is vanilla [Rails](https://rubyonrails.org/) and [Postgres](https://www.postgresql.org/). Quite a simple setup.
