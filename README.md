@@ -17,6 +17,8 @@ cp .env.example .env
 bin/setup
 ```
 
+You'll need an OpenAI API key to run this, which you should put in your `.env` file.
+
 You can then run the rails web server:
 
 ```shell
