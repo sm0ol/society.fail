@@ -1,0 +1,28 @@
+<div>
+  <h1 class="font-bold text-4xl">New citizen application</h1>
+  <p>Welcome to Properity! We're so glad you're interested in joining us. Please tell us a bit about yourself.</p>
+  <%= form_with model: @user, local: true do |form| %>
+    <div>
+      <%= form.label :location, class: 'block font-bold' %>
+      <%= form.text_field :location, class: 'border border-gray-300 rounded-md' %>
+    </div>
+    <div>
+      <%= form.label :personality_type, class: 'block font-bold' %>
+      <%= form.select :personality_type, options_for_select([
+        ['Adventurous', 'adventurous'],
+        ['Creative', 'creative'],
+        ['Empathetic', 'empathetic'],
+        ['Logical', 'logical'],
+        ['Organized', 'organized'],
+        ['Spontaneous', 'spontaneous']
+      ]), {}, { class: 'border border-gray-300 rounded-md' } %>
+    </div>
+    <div>
+      <%= form.label :hobbies, class: 'block font-bold' %>
+      <%= form.text_field :hobbies, class: 'border border-gray-300 rounded-md' %>
+    </div>
+    <div>
+      <%= form.submit 'Submit application', class: 'bg-blue-500 text-white rounded-md px-4 py-2' %>
+    </div>
+  <% end %>
+</div>
